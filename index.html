@@ -26,6 +26,7 @@
 <link rel="icon" href="icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&family=Space+Mono:wght@400;700&display=swap">
@@ -85,7 +86,19 @@ p{max-width:62ch}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 /* ---- hero ---- */
-.hero{background:var(--maroon);color:var(--white);overflow:hidden}
+.hero{position:relative;color:var(--white);overflow:hidden;background-color:var(--maroon-dk);
+  background-image:
+    linear-gradient(97deg,
+      rgba(46,11,20,.92) 0%, rgba(46,11,20,.78) 32%,
+      rgba(46,11,20,.34) 60%, rgba(46,11,20,.10) 82%, rgba(46,11,20,0) 100%),
+    linear-gradient(180deg, rgba(20,22,21,.30) 0%, rgba(20,22,21,0) 40%, rgba(20,22,21,.42) 100%),
+    url("img/hero.webp");
+  background-repeat:no-repeat;
+  background-size:cover,cover,cover;
+  background-position:center,center,center 36%}
+.hero .in{position:relative;z-index:1}
+.hero h1{text-shadow:0 3px 26px rgba(20,22,21,.5)}
+.hero .sub{text-shadow:0 2px 14px rgba(20,22,21,.55)}
 .hero .in{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
   display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
 .hero-txt{padding:72px 0}
@@ -94,8 +107,12 @@ p{max-width:62ch}
 .hero .sub{font-size:1.22rem;line-height:1.5;max-width:38ch;margin:24px 0 0;color:#F3E2E5}
 .since{display:inline-block;margin-top:26px;border:1px solid rgba(255,255,255,.4);
   font-family:var(--f-num);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px}
-.hero-img{display:flex;align-items:center;justify-content:center;padding:40px 0}
-.hero-img img{width:100%;max-width:430px;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+.hero-img{display:flex;align-items:center;justify-content:center;padding:40px 0;position:relative}
+.hero-img::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:118%;height:118%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(74,18,29,.82) 0%,rgba(74,18,29,.55) 52%,rgba(74,18,29,0) 100%)}
+.hero-img img{position:relative;z-index:1}
+.hero-img img{width:100%;max-width:430px;height:auto;filter:drop-shadow(0 16px 36px rgba(20,22,21,.62))}
 
 /* ---- the fork ---- */
 .fork{background:var(--paper);border-bottom:1px solid var(--line)}
@@ -104,6 +121,7 @@ p{max-width:62ch}
 .path .ph{height:250px;overflow:hidden;background:var(--black)}
 .path .ph img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .path .ph img.mfl{object-position:center 62%}
+.path .ph img.rtc{object-position:center 30%}
 .path .bd{padding:28px 30px 32px;flex:1;display:flex;flex-direction:column}
 .path h2{font-family:var(--f-dis);font-weight:400;font-size:2.3rem;text-transform:uppercase;margin:8px 0 10px;line-height:.92}
 .path p{font-size:.97rem;margin:0 0 18px;max-width:none;color:#3A3533}
@@ -229,6 +247,28 @@ section{padding:74px 0}
 .showup .rt-h{margin:0 0 10px}
 .showup p{font-size:.95rem}
 
+/* ---- Constant Contact widget, restyled ---- */
+#ctct{min-height:220px}
+#ctct .ctct-form-defaults,#ctct .ctct-form-custom{background:transparent!important;padding:0!important}
+#ctct .ctct-form-text,#ctct .ctct-form-label,#ctct .ctct-gdpr-text,#ctct p,#ctct label,#ctct span{
+  font-family:var(--f-body)!important;color:#F3E2E5!important}
+#ctct .ctct-form-header{font-family:var(--f-dis)!important;font-weight:400!important;
+  text-transform:uppercase!important;font-size:1.5rem!important;color:var(--white)!important;
+  margin-bottom:10px!important}
+#ctct .ctct-form-label{font-family:var(--f-num)!important;font-size:.66rem!important;
+  letter-spacing:.16em!important;text-transform:uppercase!important;color:#E8B9C0!important}
+#ctct input[type=text],#ctct input[type=email],#ctct .ctct-form-element{
+  background:var(--white)!important;border:0!important;border-radius:0!important;
+  padding:14px 15px!important;font-family:var(--f-body)!important;font-size:1rem!important;
+  color:var(--black)!important;box-shadow:none!important;width:100%!important}
+#ctct .ctct-form-button,#ctct button[type=submit]{
+  background:var(--white)!important;color:var(--maroon)!important;border:0!important;
+  border-radius:0!important;font-family:var(--f-num)!important;font-size:.82rem!important;
+  letter-spacing:.16em!important;text-transform:uppercase!important;
+  padding:16px 32px!important;width:auto!important;cursor:pointer}
+#ctct .ctct-form-button:hover{background:#F3E2E5!important}
+#ctct a{color:#fff!important;text-decoration:underline}
+
 /* ---- buttons / footer ---- */
 .btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .btn{display:inline-block;margin-top:22px;background:var(--white);color:var(--maroon);
@@ -269,6 +309,13 @@ body.locked{overflow:hidden}
   .navlinks.open{transform:translateY(0)}
   .navlinks a{padding:15px 0;border-bottom:1px solid var(--line);font-size:.86rem}
   .navlinks a:last-child{border-bottom:0}
+  .hero{background-image:
+    linear-gradient(180deg,
+      rgba(46,11,20,.88) 0%, rgba(46,11,20,.74) 46%,
+      rgba(46,11,20,.46) 74%, rgba(46,11,20,.34) 100%),
+    linear-gradient(180deg, rgba(20,22,21,.34), rgba(20,22,21,.34)),
+    url("img/hero.webp");
+    background-position:center,center,center 32%}
   .hero .in{grid-template-columns:1fr;gap:0}
   .hero-txt{padding:52px 0 8px}
   .hero-img{padding:12px 0 46px;justify-content:flex-start}
@@ -339,8 +386,8 @@ body.locked{overflow:hidden}
 <div class="fork"><div class="wrap">
   <div class="fork-grid">
     <div class="path" id="team">
-      <div class="ph"><img src="img/teamshot.webp" width="1400" height="933" loading="lazy"
-        alt="The Notch race team gathered outside the Notch tap room"></div>
+      <div class="ph"><img class="rtc" src="img/raceteamcard.webp" width="1400" height="700" loading="lazy"
+        alt="Notch teammates arm in arm at a race start line"></div>
       <div class="bd">
         <span class="tag alt">USATF-NE Grand Prix</span>
         <h2>Notch<br>Race Team</h2>
@@ -559,21 +606,13 @@ body.locked{overflow:hidden}
       <p>One email, not many. Route changes, weather calls, the Grand Prix schedule when it drops,
         and how to get on the race team. Nothing else, and you can leave any time.</p>
     </div>
-    <form class="su-form" id="signup" novalidate>
-      <label for="su-name">Your name
-        <input id="su-name" type="text" name="name" autocomplete="name" placeholder="First and last"></label>
-      <label for="su-email">Your email
-        <input id="su-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
-      <fieldset class="su-pick">
-        <legend>What are you here for?</legend>
-        <label class="cb"><input type="checkbox" name="interest" value="Social runs" checked> Social runs</label>
-        <label class="cb"><input type="checkbox" name="interest" value="Race team"> Race team</label>
-      </fieldset>
-      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn" type="submit">Sign me up</button>
-      <p class="su-msg" id="su-msg" role="status" aria-live="polite"></p>
-      <p class="su-fine">No dues, no spam. We will never sell your address.</p>
-    </form>
+    <div class="su-form">
+      <!-- Begin Constant Contact Inline Form Code -->
+      <div class="ctct-inline-form" id="ctct" data-form-id="2ff6db4c-d391-4a2f-b44c-5ab54601181b"></div>
+      <!-- End Constant Contact Inline Form Code -->
+      <noscript><p class="su-fine">Turn on JavaScript to use the signup form, or email
+        <a href="mailto:info@notchrunclub.com">info@notchrunclub.com</a>.</p></noscript>
+    </div>
   </div>
 
   <div class="showup">
@@ -603,13 +642,6 @@ body.locked{overflow:hidden}
 </div>
 
 <script>
-/* ============================================================
-   SIGNUP ENDPOINT -- paste the form handler URL here.
-   Works with Formspree, Buttondown, Mailchimp proxy, Netlify, etc.
-   While this is empty the form tells the visitor to email instead.
-   ============================================================ */
-var SIGNUP_ENDPOINT = "";
-var SIGNUP_FALLBACK_EMAIL = "info@notchrunclub.com";
 
 (function () {
   "use strict";
@@ -657,54 +689,31 @@ var SIGNUP_FALLBACK_EMAIL = "info@notchrunclub.com";
     if (e.key === "Escape" && lb.classList.contains("open")) closeLb();
   });
 
-  /* ---- email signup ---- */
-  var form = document.getElementById("signup"),
-      msg  = document.getElementById("su-msg");
-
-  function say(text, kind) {
-    msg.innerHTML = text;
-    msg.className = "su-msg show " + kind;
+  /* ---- Constant Contact: load the 1 MB widget only when the signup nears view ---- */
+  var ctct = document.getElementById("ctct"), ctctLoaded = false;
+  function loadCtct() {
+    if (ctctLoaded || !ctct) return;
+    ctctLoaded = true;
+    var sc = document.createElement("script");
+    sc.src = "https://static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js";
+    sc.async = true; sc.defer = true;
+    sc.onerror = function () {
+      ctct.innerHTML = '<p class="su-fine">The signup form could not load. Email ' +
+        '<a href="mailto:info@notchrunclub.com">info@notchrunclub.com</a> and we will add you.</p>';
+    };
+    document.head.appendChild(sc);
   }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (form.company.value) return;                 // honeypot: silently drop bots
-    var email = form.email.value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      say("That email does not look right. Mind checking it?", "bad");
-      form.email.focus();
-      return;
-    }
-    var interests = Array.prototype.map.call(
-      form.querySelectorAll('input[name="interest"]:checked'), function (i) { return i.value; }
-    ).join(", ") || "Not specified";
-
-    if (!SIGNUP_ENDPOINT) {
-      say('The signup list is not connected yet. For now, email us at ' +
-          '<a href="mailto:' + SIGNUP_FALLBACK_EMAIL + '?subject=Join%20the%20list">' +
-          SIGNUP_FALLBACK_EMAIL + '</a> and we will add you.', "bad");
-      return;
-    }
-
-    var btn = form.querySelector("button[type=submit]");
-    btn.disabled = true; btn.textContent = "Sending";
-    fetch(SIGNUP_ENDPOINT, {
-      method: "POST",
-      headers: { "Accept": "application/json", "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: form.name.value.trim(), email: email, interest: interests
-      })
-    }).then(function (r) {
-      if (!r.ok) throw new Error(r.status);
-      form.reset();
-      say("You are on the list. See you out there.", "ok");
-    }).catch(function () {
-      say('Something went wrong. Email us at <a href="mailto:' + SIGNUP_FALLBACK_EMAIL + '">' +
-          SIGNUP_FALLBACK_EMAIL + "</a> and we will add you.", "bad");
-    }).then(function () {
-      btn.disabled = false; btn.textContent = "Sign me up";
+  if (ctct) {
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting) { loadCtct(); io.disconnect(); }
+      }, { rootMargin: "700px" });
+      io.observe(ctct);
+    } else { loadCtct(); }
+    Array.prototype.forEach.call(document.querySelectorAll('a[href="#join"]'), function (a) {
+      a.addEventListener("click", loadCtct);
     });
-  });
+  }
 })();
 </script>
 </body>
