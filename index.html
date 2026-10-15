@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notch Run Club | Free social runs and a USATF race team in Salem &amp; Boston</title>
+<meta name="description" content="Notch Run Club is a free running club with four weekly social runs from Notch taprooms in Salem and Boston, plus a USATF-NE race team. No dues, no sign up, all paces welcome.">
+<link rel="canonical" href="https://notchrunclub.com/">
+<meta name="theme-color" content="#661C29">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notch Run Club">
+<meta property="og:title" content="Notch Run Club">
+<meta property="og:description" content="Four free weekly social runs and a USATF-NE race team. Salem and Boston, Massachusetts. No dues, all paces.">
+<meta property="og:url" content="https://notchrunclub.com/">
+<meta property="og:image" content="https://notchrunclub.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Notch Run Club race team outside the Notch tap room">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notch Run Club">
+<meta name="twitter:description" content="Four free weekly social runs and a USATF-NE race team. Salem and Boston, Massachusetts.">
+<meta name="twitter:image" content="https://notchrunclub.com/og.jpg">
+
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="icon" href="icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&family=Space+Mono:wght@400;700&display=swap">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SportsClub","name":"Notch Run Club",
+"alternateName":"Meters for Liters","url":"https://notchrunclub.com/",
+"logo":"https://notchrunclub.com/icon-512.png","image":"https://notchrunclub.com/og.jpg",
+"description":"A free running club with four weekly social runs and a USATF-NE race team, based in Salem and Boston, Massachusetts.",
+"foundingDate":"2012","sport":"Running","areaServed":"Greater Boston and the North Shore, Massachusetts",
+"sameAs":["https://www.instagram.com/metersforliters/","https://www.strava.com/clubs/notch"],
+"location":[
+ {"@type":"Place","name":"Notch Brewing Salem","address":{"@type":"PostalAddress","streetAddress":"283R Derby St.","addressLocality":"Salem","addressRegion":"MA","addressCountry":"US"}},
+ {"@type":"Place","name":"Notch Brewing Brighton","address":{"@type":"PostalAddress","streetAddress":"525 Western Ave.","addressLocality":"Boston","addressRegion":"MA","addressCountry":"US"}}]}
+</script>
+
+<style>
+:root{
+  --maroon:#661C29; --maroon-dk:#4A121D;
+  --black:#141615; --white:#FFFFFF; --paper:#F6F4F2; --line:#E2DDDA; --grey:#6E6764;
+  --f-dis:"Anton","Haettenschweiler","Arial Narrow",sans-serif;
+  --f-body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  --f-num:"Space Mono",ui-monospace,Menlo,monospace;
+  --wrap:1200px; --pad:40px; --nav-h:92px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--black);font-family:var(--f-body);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-num);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--maroon)}
+.eyebrow.on-dark{color:#E8B9C0}
+p{max-width:62ch}
+:focus-visible{outline:3px solid #E8B9C0;outline-offset:3px}
+.dark :focus-visible,.maroonbg :focus-visible{outline-color:#fff}
+.skip{position:absolute;left:-9999px;top:0;z-index:999;background:var(--maroon);color:#fff;
+  padding:14px 20px;font-family:var(--f-num);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.skip:focus{left:0}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---- nav ---- */
+.nav{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60}
+.nav .in{max-width:var(--wrap);margin:0 auto;padding:14px var(--pad);display:flex;
+  justify-content:space-between;align-items:center;gap:20px}
+.logo{height:62px;width:auto}
+.navlinks{display:flex;gap:26px;font-family:var(--f-num);font-size:.74rem;
+  letter-spacing:.16em;text-transform:uppercase}
+.navlinks a{color:var(--black);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.navlinks a:hover,.navlinks a:focus-visible{border-bottom-color:var(--maroon)}
+.burger{display:none;background:none;border:1px solid var(--line);padding:11px 13px;cursor:pointer}
+.burger span{display:block;width:21px;height:2px;background:var(--black);margin:4px 0;transition:.22s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ---- hero ---- */
+.hero{background:var(--maroon);color:var(--white);overflow:hidden}
+.hero .in{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero-txt{padding:72px 0}
+.hero h1{font-family:var(--f-dis);font-weight:400;font-size:clamp(54px,8.4vw,112px);line-height:.84;
+  text-transform:uppercase;margin:12px 0 0;letter-spacing:-.008em}
+.hero .sub{font-size:1.22rem;line-height:1.5;max-width:38ch;margin:24px 0 0;color:#F3E2E5}
+.since{display:inline-block;margin-top:26px;border:1px solid rgba(255,255,255,.4);
+  font-family:var(--f-num);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px}
+.hero-img{display:flex;align-items:center;justify-content:center;padding:40px 0}
+.hero-img img{width:100%;max-width:430px;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+
+/* ---- the fork ---- */
+.fork{background:var(--paper);border-bottom:1px solid var(--line)}
+.fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:66px 0}
+.path{background:var(--white);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.path .ph{height:250px;overflow:hidden;background:var(--black)}
+.path .ph img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.path .ph img.mfl{object-position:center 62%}
+.path .bd{padding:28px 30px 32px;flex:1;display:flex;flex-direction:column}
+.path h2{font-family:var(--f-dis);font-weight:400;font-size:2.3rem;text-transform:uppercase;margin:8px 0 10px;line-height:.92}
+.path p{font-size:.97rem;margin:0 0 18px;max-width:none;color:#3A3533}
+.tag{display:inline-block;background:var(--maroon);color:var(--white);font-family:var(--f-num);
+  font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;align-self:flex-start}
+.tag.alt{background:var(--black)}
+.path .foot{margin-top:auto;font-family:var(--f-num);font-size:.74rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--maroon);border-top:1px solid var(--line);padding-top:16px}
+
+/* ---- sections ---- */
+section{padding:74px 0}
+[id]{scroll-margin-top:var(--nav-h)}
+.sec-h{font-family:var(--f-dis);font-weight:400;font-size:clamp(34px,5.4vw,62px);text-transform:uppercase;
+  margin:10px 0 24px;line-height:.9}
+.dark{background:var(--black);color:var(--white)}
+.wm{position:relative;overflow:hidden}
+.wm::before{content:"";position:absolute;right:-90px;bottom:-110px;width:620px;height:510px;
+  background:url("img/raccoon.webp") no-repeat center/contain;opacity:.06;pointer-events:none}
+.maroonbg.wm::before{opacity:.10;right:-60px;bottom:auto;top:-80px}
+.dark .sec-h{color:var(--white)}
+.dark p{color:#CFC9C7}
+.maroonbg{background:var(--maroon);color:var(--white)}
+.maroonbg .sec-h{color:var(--white)}
+.maroonbg p{color:#F3E2E5}
+
+/* ---- run board ---- */
+.board{margin-top:32px;border-top:3px solid var(--maroon);position:relative;z-index:1}
+.run{display:grid;grid-template-columns:118px 1fr auto;gap:26px;align-items:center;
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.run .day{font-family:var(--f-dis);font-weight:400;font-size:1.6rem;text-transform:uppercase;color:#E8B9C0}
+.run .where b{display:block;font-family:var(--f-num);font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#9A9290;font-weight:400;margin-bottom:2px}
+.run .time{font-family:var(--f-num);font-weight:700;font-size:1.5rem}
+
+/* ---- routes ---- */
+.routes{margin-top:62px;border-top:1px solid rgba(255,255,255,.16);padding-top:34px;position:relative;z-index:1}
+.rt-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.rt-h{font-family:var(--f-dis);font-weight:400;font-size:2.1rem;text-transform:uppercase;margin:0;line-height:.95;color:var(--white)}
+.rt-hint{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#9A9290}
+.loc{margin-top:30px}
+.loc-bar{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap;
+  border-left:3px solid var(--maroon);padding:2px 0 2px 14px;margin-bottom:14px}
+.loc-nm{font-family:var(--f-dis);font-weight:400;font-size:1.35rem;text-transform:uppercase;color:var(--white);line-height:1.1}
+.loc-tm{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#E8B9C0}
+.mapgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mapfig{position:relative;display:block;background:var(--white);border:1px solid rgba(255,255,255,.18);
+  text-decoration:none;overflow:hidden;cursor:zoom-in}
+.mapfig img{width:100%;height:auto;transition:transform .35s ease}
+.mapfig:hover img,.mapfig:focus-visible img{transform:scale(1.03)}
+.mcap,.zoom{position:absolute;bottom:10px;background:rgba(20,22,21,.82);color:#fff;
+  font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px}
+.mcap{left:10px} .zoom{right:10px}
+.rt-note{margin-top:22px;font-size:.92rem}
+
+/* ---- race photos, shown whole ---- */
+.duo{display:flex;gap:16px;justify-content:center;align-items:flex-start;margin-top:38px;position:relative;z-index:1}
+.duo img{width:auto;height:auto;max-height:470px;max-width:48%}
+
+/* ---- team records ---- */
+.recs{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;margin-top:44px;
+  border-top:1px solid rgba(255,255,255,.3);padding-top:30px;position:relative;z-index:1}
+.rec-main .rt-h{margin:8px 0 10px}
+.rec-p{font-size:.97rem;margin:0}
+.rec-note{border-left:1px solid rgba(255,255,255,.3);padding-left:28px}
+.rec-note p{font-size:.92rem;margin:10px 0 0}
+
+/* ---- perks ---- */
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;margin-top:40px;position:relative;z-index:1}
+.perk{display:flex;gap:13px;align-items:flex-start;padding:13px 0;border-top:1px solid rgba(255,255,255,.16)}
+.perk i{flex:0 0 auto;width:14px;height:14px;margin-top:5px;background:#E8B9C0;
+  clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.perk span{font-size:.93rem;line-height:1.45;color:#F7EDEF}
+.perk b{font-weight:800;color:var(--white)}
+
+/* ---- faq ---- */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin-top:34px;position:relative;z-index:1}
+.q{padding:16px 0;border-top:1px solid rgba(255,255,255,.16)}
+.q h3{font-family:var(--f-body);font-weight:800;font-size:.98rem;margin:0 0 6px;color:#E8B9C0}
+.q p{margin:0;font-size:.92rem;max-width:none}
+
+/* ---- people ---- */
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
+.person .ph{aspect-ratio:3/4;background:var(--black);overflow:hidden;margin-bottom:12px}
+.person .ph img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.person .nm{font-family:var(--f-dis);font-weight:400;font-size:1.25rem;text-transform:uppercase;line-height:1}
+.person .rl{font-family:var(--f-num);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--maroon);margin:4px 0 8px}
+.person p{font-size:.84rem;line-height:1.5;color:#4A4441;margin:0;max-width:none}
+
+/* ---- partners ---- */
+.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:30px}
+.pt{background:var(--white);padding:34px 28px 24px;display:flex;flex-direction:column;
+  align-items:center;justify-content:space-between;gap:22px;min-height:186px}
+.pt img{width:auto;max-width:80%;max-height:66px;object-fit:contain;opacity:.88;margin:auto 0}
+.pt img.l-notch{max-height:54px} .pt img.l-saul{max-height:58px} .pt img.l-wcwt{max-height:60px}
+.pt img.l-nb{max-height:74px} .pt img.l-octo{max-height:84px} .pt img.l-128{max-height:92px;max-width:92%}
+.pt .role{font-family:var(--f-num);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grey);text-align:center;line-height:1.5}
+
+/* ---- email signup ---- */
+.signup{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+.su-txt .sec-h{margin-bottom:18px}
+.su-form{background:rgba(0,0,0,.17);padding:30px 32px 32px;position:relative;z-index:1}
+.su-form label{display:block;font-family:var(--f-num);font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:#E8B9C0;margin-bottom:18px}
+.su-form input[type=text],.su-form input[type=email]{display:block;width:100%;margin-top:8px;
+  background:var(--white);border:0;padding:14px 15px;font-family:var(--f-body);font-size:1rem;color:var(--black)}
+.su-pick{border:0;padding:0;margin:0 0 20px;display:block}
+.su-pick legend{font-family:var(--f-num);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  color:#E8B9C0;padding:0;margin-bottom:9px}
+.su-form .su-pick .cb{display:inline-flex;align-items:center;gap:9px;margin:0 24px 8px 0;
+  font-family:var(--f-body);font-size:.95rem;letter-spacing:0;text-transform:none;color:var(--white)}
+.su-form .su-pick .cb input{width:16px;height:16px;accent-color:var(--white);margin:0;flex:0 0 auto}
+.su-form .btn{margin-top:4px;border:0;cursor:pointer;font-weight:400;font-family:var(--f-num)}
+.su-form .btn[disabled]{opacity:.55;cursor:progress}
+.su-fine{font-size:.78rem;color:#E0C4C9;margin:16px 0 0;max-width:none}
+.su-msg{margin:16px 0 0;font-size:.9rem;max-width:none;display:none}
+.su-msg.show{display:block}
+.su-msg.ok{color:#CFF5D8} .su-msg.bad{color:#FFD4DA}
+.hp{position:absolute;left:-9999px}
+.showup{margin-top:58px;border-top:1px solid rgba(255,255,255,.3);padding-top:30px;position:relative;z-index:1}
+.showup .rt-h{margin:0 0 10px}
+.showup p{font-size:.95rem}
+
+/* ---- buttons / footer ---- */
+.btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;margin-top:22px;background:var(--white);color:var(--maroon);
+  font-family:var(--f-num);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:16px 32px;text-decoration:none;transition:.18s}
+.btn:hover{background:#F3E2E5}
+.btn.ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+footer{background:var(--black);color:#8E8785;padding:30px 0 40px;
+  font-family:var(--f-num);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.frow{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.flinks{display:flex;gap:20px;flex-wrap:wrap}
+.flinks a{color:#CFC9C7;text-decoration:none}
+.flinks a:hover{color:#fff}
+
+/* ---- lightbox ---- */
+.lb{position:fixed;inset:0;background:rgba(10,11,10,.93);z-index:200;display:none;
+  align-items:center;justify-content:center;padding:28px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:88vh;width:auto;height:auto;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-cap{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#CFC9C7;
+  font-family:var(--f-num);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
+.lb-x{position:absolute;top:16px;right:18px;background:none;border:1px solid rgba(255,255,255,.4);
+  color:#fff;width:44px;height:44px;font-size:1.3rem;cursor:pointer;line-height:1}
+body.locked{overflow:hidden}
+
+/* ---- responsive ---- */
+@media (max-width:1060px){
+  .people{grid-template-columns:repeat(3,1fr)}
+  .perks{grid-template-columns:repeat(2,1fr);gap:0 30px}
+}
+@media (max-width:920px){
+  :root{--pad:26px;--nav-h:84px}
+  .burger{display:block}
+  .navlinks{position:fixed;inset:var(--nav-h) 0 auto 0;background:var(--white);flex-direction:column;
+    gap:0;padding:8px 26px 22px;border-bottom:1px solid var(--line);transform:translateY(-130%);
+    transition:transform .3s ease;box-shadow:0 18px 30px rgba(0,0,0,.08)}
+  .navlinks.open{transform:translateY(0)}
+  .navlinks a{padding:15px 0;border-bottom:1px solid var(--line);font-size:.86rem}
+  .navlinks a:last-child{border-bottom:0}
+  .hero .in{grid-template-columns:1fr;gap:0}
+  .hero-txt{padding:52px 0 8px}
+  .hero-img{padding:12px 0 46px;justify-content:flex-start}
+  .hero-img img{max-width:270px}
+  .fork-grid{grid-template-columns:1fr;gap:26px;padding:48px 0}
+  section{padding:56px 0}
+  .recs,.signup{grid-template-columns:1fr;gap:30px}
+  .rec-note{border-left:0;border-top:1px solid rgba(255,255,255,.3);padding:22px 0 0}
+  .faq{grid-template-columns:1fr}
+  .wm::before{width:420px;height:350px;right:-70px}
+  .logo{height:50px}
+}
+@media (max-width:760px){
+  .people{grid-template-columns:repeat(2,1fr)}
+  .partners{grid-template-columns:repeat(2,1fr)}
+  .mapgrid{grid-template-columns:1fr}
+  .duo{flex-direction:column;align-items:center;gap:14px}
+  .duo img{max-width:min(100%,380px);max-height:none}
+  .run{grid-template-columns:62px 1fr;gap:12px 16px}
+  .run .time{grid-column:2;font-size:1.2rem}
+  .loc-bar{flex-direction:column;gap:4px}
+  .su-form{padding:24px 22px 26px}
+}
+@media (max-width:520px){
+  :root{--pad:20px}
+  .perks{grid-template-columns:1fr}
+  .people{grid-template-columns:1fr;gap:28px}
+  .person .ph{aspect-ratio:1/1}
+  .partners{grid-template-columns:1fr}
+  .frow{flex-direction:column;gap:12px}
+  .btns{flex-direction:column;align-items:stretch}
+  .btn{text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav"><div class="in">
+  <a href="#top" aria-label="Notch Run Club, back to top"><img class="logo" src="img/logo.webp" width="640" height="320" alt="Notch Run Club"></a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
+    <span></span><span></span><span></span></button>
+  <div class="navlinks" id="navlinks">
+    <a href="#team">Race Team</a><a href="#social">Social Runs</a><a href="#routes">Routes</a>
+    <a href="#leadership">Leadership</a><a href="#partners">Partners</a><a href="#join">Join</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="in">
+  <div class="hero-txt">
+    <p class="eyebrow on-dark">Salem &amp; Boston, Massachusetts</p>
+    <h1>Notch<br>Run Club</h1>
+    <p class="sub">A running club built on two things: 4 weekly and mostly casual social
+      runs, and a race team that trains and competes. Both are free and open to anyone.</p>
+    <span class="since num">Est. 2012</span>
+  </div>
+  <div class="hero-img">
+    <img src="img/raccoon.webp" width="900" height="741" alt="The Notch Run Club raccoon mascot" fetchpriority="high">
+  </div>
+</div></header>
+
+<main id="main">
+
+<div class="fork"><div class="wrap">
+  <div class="fork-grid">
+    <div class="path" id="team">
+      <div class="ph"><img src="img/teamshot.webp" width="1400" height="933" loading="lazy"
+        alt="The Notch race team gathered outside the Notch tap room"></div>
+      <div class="bd">
+        <span class="tag alt">USATF-NE Grand Prix</span>
+        <h2>Notch<br>Race Team</h2>
+        <p>The competitive side. We race the seven event USATF-NE Grand Prix as a club, across every
+          age and gender division. Free coaching, group workouts, and free childcare at every Grand
+          Prix race. All paces welcome.</p>
+        <p class="foot">Formed 2019 &middot; All divisions</p>
+      </div>
+    </div>
+    <div class="path" id="social">
+      <div class="ph"><img class="mfl" src="img/meterscard.webp" width="1400" height="933" loading="lazy"
+        alt="Meters for Liters runners at the taproom picnic tables after a social run"></div>
+      <div class="bd">
+        <span class="tag">Free &middot; No sign up</span>
+        <h2>Meters<br>for Liters</h2>
+        <p>Our social runs. Four a week, from two Notch taprooms, open to every human and many dogs.
+          We don&rsquo;t care about your pace. People run the route, people walk the route, and both
+          are just great. There is no registration. You show up.</p>
+        <p class="foot">Wed &middot; Thu &middot; Sat &middot; Sun</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="dark wm"><div class="wrap"><section>
+  <p class="eyebrow on-dark">Meters for Liters</p>
+  <h2 class="sec-h">On the board</h2>
+  <p>Four social runs, every week, all year. No registration, no sign up, no dues. Just turn up.</p>
+
+  <div class="board">
+    <div class="run"><div class="day">Wed</div>
+      <div class="where"><b>Salem</b>283R Derby St.</div><div class="time num">6:30 PM</div></div>
+    <div class="run"><div class="day">Thu</div>
+      <div class="where"><b>Boston</b>525 Western Ave.</div><div class="time num">7:00 PM</div></div>
+    <div class="run"><div class="day">Sat</div>
+      <div class="where"><b>Boston</b>525 Western Ave.</div><div class="time num">12:15 PM</div></div>
+    <div class="run"><div class="day">Sun</div>
+      <div class="where"><b>Salem</b>283R Derby St.</div><div class="time num">12:15 PM</div></div>
+  </div>
+
+  <div class="routes" id="routes">
+    <div class="rt-head">
+      <h3 class="rt-h">Know where you&rsquo;re going</h3>
+      <span class="rt-hint num">Tap any map to enlarge</span>
+    </div>
+
+    <div class="loc">
+      <div class="loc-bar">
+        <span class="loc-nm">Boston &middot; 525 Western Ave.</span>
+        <span class="loc-tm num">Thursdays 7pm &nbsp;|&nbsp; Saturdays 12:15pm</span>
+      </div>
+      <div class="mapgrid">
+        <a class="mapfig" href="img/map-boston-short.webp" data-cap="Boston &middot; Short loop">
+          <img src="img/map-boston-short.webp" width="1700" height="1236" loading="lazy"
+            alt="Hand drawn Meters for Liters route map for the Boston short loop">
+          <span class="mcap num">Short loop</span><span class="zoom num">Enlarge</span></a>
+        <a class="mapfig" href="img/map-boston-long.webp" data-cap="Boston &middot; Long loop">
+          <img src="img/map-boston-long.webp" width="1700" height="1236" loading="lazy"
+            alt="Hand drawn Meters for Liters route map for the Boston long loop">
+          <span class="mcap num">Long loop</span><span class="zoom num">Enlarge</span></a>
+      </div>
+    </div>
+
+    <div class="loc">
+      <div class="loc-bar">
+        <span class="loc-nm">Salem &middot; 283R Derby St.</span>
+        <span class="loc-tm num">Wednesdays 6:30pm &nbsp;|&nbsp; Sundays 12:15pm</span>
+      </div>
+      <div class="mapgrid">
+        <a class="mapfig" href="img/map-salem-5k.webp" data-cap="Salem &middot; 5K">
+          <img src="img/map-salem-5k.webp" width="1200" height="894" loading="lazy"
+            alt="Hand drawn Meters for Liters 5K route map for Salem">
+          <span class="mcap num">5K</span><span class="zoom num">Enlarge</span></a>
+        <a class="mapfig" href="img/map-salem-10k.webp" data-cap="Salem &middot; 10K">
+          <img src="img/map-salem-10k.webp" width="1200" height="894" loading="lazy"
+            alt="Hand drawn Meters for Liters 10K route map for Salem">
+          <span class="mcap num">10K</span><span class="zoom num">Enlarge</span></a>
+      </div>
+    </div>
+    <p class="rt-note">Short loop or long loop, your call when you get there.</p>
+  </div>
+</section></div></div>
+
+<div class="maroonbg wm"><div class="wrap"><section>
+  <p class="eyebrow on-dark">Race team</p>
+  <h2 class="sec-h">Seven races.<br>All paces.</h2>
+  <p>Our race team competes in the USATF-NE Grand Prix, seven races across the season. Everyone is
+    welcome and encouraged to race with us, whatever your pace. We train hard to set PRs and we
+    celebrate every single teammate who does.</p>
+
+  <div class="duo">
+    <img src="img/action-runner.webp" width="677" height="1000" loading="lazy"
+      alt="A Notch runner racing in the rain in a club singlet">
+    <img src="img/action-pair.webp" width="877" height="1000" loading="lazy"
+      alt="Two Notch teammates laughing together as they finish a race">
+  </div>
+
+  <div class="recs">
+    <div class="rec-main">
+      <p class="eyebrow on-dark">Team records</p>
+      <h3 class="rt-h">Every club best, in one place</h3>
+      <p class="rec-p">We keep a running sheet of every Notch club record across the distances and
+        divisions. Beat one and your name goes on it.</p>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1ojFnL1WuHnP7DRpcugni1BJ5H-msF_cUWb5VVgRZk4s/edit?usp=sharing"
+        target="_blank" rel="noopener">View team records</a>
+    </div>
+    <div class="rec-note">
+      <p class="eyebrow on-dark">Next season</p>
+      <p>The USATF-NE Grand Prix schedule for the coming season has not been released yet. When it
+        lands we will post it here and send it to the list.</p>
+    </div>
+  </div>
+
+  <div class="perks">
+    <div class="perk"><i></i><span><b>No dues.</b> Ever. Proudly free to be part of.</span></div>
+    <div class="perk"><i></i><span><b>Free race kit</b> from New Balance at your first race.</span></div>
+    <div class="perk"><i></i><span><b>Free childcare</b> during every Grand Prix race.</span></div>
+    <div class="perk"><i></i><span><b>Boston Marathon bus.</b> A seat on the team ride to the start.</span></div>
+    <div class="perk"><i></i><span><b>Invitational bibs</b> to the Boston Marathon.</span></div>
+    <div class="perk"><i></i><span><b>Free beer and NA beer</b> after races.</span></div>
+    <div class="perk"><i></i><span><b>Coach written workouts</b> emailed out every week.</span></div>
+    <div class="perk"><i></i><span><b>Weekly group workouts</b> and practice sessions.</span></div>
+    <div class="perk"><i></i><span><b>Team chat on WhatsApp.</b> Rides, splits, nonsense.</span></div>
+    <div class="perk"><i></i><span><b>Every division.</b> Open, Masters, 50+, 60+.</span></div>
+    <div class="perk"><i></i><span><b>Relaxed vibe,</b> still working hard.</span></div>
+    <div class="perk"><i></i><span><b>All paces.</b> No qualifying time, no tryout.</span></div>
+  </div>
+
+  <div class="faq">
+    <div class="q"><h3>Do I have to use the Notch coach?</h3><p>No. We offer free coaching and
+      workouts, but keep your own coach if you want to. Most of us find hard sessions as a group lift
+      everybody up. But sometimes you want that person who just gets you. You do you.</p></div>
+    <div class="q"><h3>Which divisions are you recruiting?</h3><p>All of them. Whether you race
+      female 18 to 39 or male 70 to 79, we would love to have you. No age or gender requirements.</p></div>
+    <div class="q"><h3>Do I have to come to practice?</h3><p>Nope. It will probably help, but there
+      are no attendance requirements. We do love a great turnout.</p></div>
+    <div class="q"><h3>Do I have to run all seven races?</h3><p>No. But they are the primary
+      objective for the team, so come to as many as you can.</p></div>
+    <div class="q"><h3>Can I join if I belong to another club?</h3><p>Yes. Lots of us are members of
+      several. The only time you must choose is for USATF races, where you can represent one team
+      only.</p></div>
+    <div class="q"><h3>Are there non alcoholic options?</h3><p>Yes. The taprooms where our workouts
+      end serve their own NA beer, alongside GUS sodas and water.</p></div>
+    <div class="q"><h3>What about childcare?</h3><p>Free, at every Grand Prix race, at no cost to
+      you. Being a parent shouldn&rsquo;t mean your career is over. Bring the kids, run your best,
+      and they will be there to cheer you on.</p></div>
+    <div class="q"><h3>How do I learn more?</h3><p>Join the email list below, or just show up to one
+      of our social runs and find us.</p></div>
+  </div>
+</section></div></div>
+
+<div class="wrap" id="leadership"><section>
+  <p class="eyebrow">Leadership</p>
+  <h2 class="sec-h">Who runs this</h2>
+  <div class="people">
+    <div class="person"><div class="ph"><img src="img/p-donato.webp" width="599" height="930" loading="lazy" alt="Dan Donato"></div>
+      <h3 class="nm">Dan Donato</h3><p class="rl">President</p>
+      <p>Ran in high school, strayed to rugby in college, came back after. Started the Wednesday
+        social run from Notch Salem in 2016, formed the first race team in 2019, and opened Boston
+        in 2021. Race Director for NorthShore RunFest and Mayor&rsquo;s Mile.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-kinley.webp" width="620" height="930" loading="lazy" alt="Jordan Kinley"></div>
+      <h3 class="nm">Jordan Kinley</h3><p class="rl">Coach</p>
+      <p>Raised on the west coast, ran Division 1 as a miler, then moved up in distance and won Santa
+        Rosa and Thunder Road. Director of Wholesale at Tracksmith. Lives in Salem.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-gendron.webp" width="620" height="930" loading="lazy" alt="Kristin Gendron"></div>
+      <h3 class="nm">Kristin Gendron</h3><p class="rl">Women&rsquo;s Captain, Open</p>
+      <p>Bio coming soon.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-keras.webp" width="620" height="930" loading="lazy" alt="Greg Keras"></div>
+      <h3 class="nm">Greg Keras</h3><p class="rl">Men&rsquo;s Captain, Open</p>
+      <p>Came to running after college baseball. Found Notch after moving to Salem during the
+        pandemic and has got stronger ever since, most recently a marathon PR in Berlin.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-chruniak.webp" width="620" height="754" loading="lazy" alt="Dan Chruniak"></div>
+      <h3 class="nm">Dan Chruniak</h3><p class="rl">Men&rsquo;s Captain, Master&rsquo;s</p>
+      <p>Running since high school and strikes fear into the hearts of competitors on the start line.
+        Past champion of many races, including the Hyannis Marathon.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-furnari.webp" width="620" height="930" loading="lazy" alt="Carrie Furnari"></div>
+      <h3 class="nm">Carrie Furnari</h3><p class="rl">Women&rsquo;s Captain, Master&rsquo;s</p>
+      <p>Grew up in Marblehead and lives there now. Ran track at Marblehead High, class of 2000 with
+        Shalane Flanagan. Marathon PR of 3:06 and chasing the sub three.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-arre.webp" width="620" height="930" loading="lazy" alt="Alyssa Arre"></div>
+      <h3 class="nm">Alyssa Arre</h3><p class="rl">Team Archivist</p>
+      <p>Favorite distance is the mile. Works as a data analyst and is bringing that to the
+        team&rsquo;s running and racing data.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-butcher.webp" width="620" height="918" loading="lazy" alt="David Butcher"></div>
+      <h3 class="nm">David Butcher</h3><p class="rl">Athlete Rep, Boston</p>
+      <p>Found the club in Salem during COVID, then moved to Brookline and made Boston his crew.
+        Helps others find the same joy in pushing themselves.</p></div>
+    <div class="person"><div class="ph"><img src="img/p-mancini.webp" width="620" height="930" loading="lazy" alt="Chris Mancini"></div>
+      <h3 class="nm">Chris Mancini</h3><p class="rl">Athlete Rep, Salem</p>
+      <p>Joined after admiring the singlets from afar. What he lacks in speed he makes up for in
+        enthusiasm. Lives in Swampscott and plays drums in a Halloween themed rockabilly band.</p></div>
+  </div>
+</section></div>
+
+<div class="fork" id="partners"><div class="wrap"><section>
+  <p class="eyebrow">Partners</p>
+  <h2 class="sec-h">Who&rsquo;s supporting<br>the club?</h2>
+  <p>Notch Run Club is bolstered by businesses who believe in what we&rsquo;re building. Their
+    support does more than fund a run club. It strengthens the neighborhoods we live in and
+    celebrates the people who show up week after week.</p>
+  <div class="partners">
+    <div class="pt"><img class="l-notch" src="img/partners/notch-brewing.webp" width="560" height="222" loading="lazy" alt="Notch Brewing"><p class="role">Official Beer Partner</p></div>
+    <div class="pt"><img class="l-nb" src="img/partners/new-balance.webp" width="471" height="260" loading="lazy" alt="New Balance"><p class="role">Footwear &amp; Apparel</p></div>
+    <div class="pt"><img class="l-saul" src="img/partners/saulnier.webp" width="560" height="178" loading="lazy" alt="Saulnier Floors"><p class="role">Official Flooring</p></div>
+    <div class="pt"><img class="l-wcwt" src="img/partners/wcwt.webp" width="700" height="197" loading="lazy" alt="Witch City Walking Tours"><p class="role">Historical Tours</p></div>
+    <div class="pt"><img class="l-octo" src="img/partners/octocog.webp" width="498" height="260" loading="lazy" alt="OctoCog Marketing &amp; Design"><p class="role">Design Partner</p></div>
+    <div class="pt"><img class="l-128" src="img/partners/128-plumbing.webp" width="439" height="260" loading="lazy" alt="128 Plumbing"><p class="role">Plumbing, Heating, Cooling &amp; Electrical</p></div>
+  </div>
+</section></div></div>
+
+<div class="maroonbg wm" id="join"><div class="wrap"><section>
+  <div class="signup">
+    <div class="su-txt">
+      <p class="eyebrow on-dark">Join the list</p>
+      <h2 class="sec-h">Get the<br>email</h2>
+      <p>One email, not many. Route changes, weather calls, the Grand Prix schedule when it drops,
+        and how to get on the race team. Nothing else, and you can leave any time.</p>
+    </div>
+    <form class="su-form" id="signup" novalidate>
+      <label for="su-name">Your name
+        <input id="su-name" type="text" name="name" autocomplete="name" placeholder="First and last"></label>
+      <label for="su-email">Your email
+        <input id="su-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <fieldset class="su-pick">
+        <legend>What are you here for?</legend>
+        <label class="cb"><input type="checkbox" name="interest" value="Social runs" checked> Social runs</label>
+        <label class="cb"><input type="checkbox" name="interest" value="Race team"> Race team</label>
+      </fieldset>
+      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Sign me up</button>
+      <p class="su-msg" id="su-msg" role="status" aria-live="polite"></p>
+      <p class="su-fine">No dues, no spam. We will never sell your address.</p>
+    </form>
+  </div>
+
+  <div class="showup">
+    <h2 class="rt-h">Or just show up</h2>
+    <p>There is no registration for the social runs. If you have friends who have thought about
+      joining us on a Wednesday, Thursday, Saturday or Sunday, tell them they are welcome regardless
+      of how long it takes them to get from start to finish.</p>
+    <a class="btn ghost" href="notch-run-club-one-pager.pdf" target="_blank" rel="noopener">Download the one pager</a>
+  </div>
+</section></div></div>
+
+</main>
+
+<footer><div class="wrap"><div class="frow">
+  <span>Notch Run Club &middot; Est. 2012 &middot; Salem &amp; Boston MA</span>
+  <span class="flinks">
+    <a href="https://www.instagram.com/metersforliters/" target="_blank" rel="noopener">Instagram @metersforliters</a>
+    <a href="https://www.strava.com/clubs/notch" target="_blank" rel="noopener">Strava /clubs/notch</a>
+  </span>
+  <span><a href="https://octocog.com" target="_blank" rel="noopener">Designed and maintained by OctoCog Marketing &amp; Design</a></span>
+</div></div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Route map">
+  <button class="lb-x" id="lb-x" aria-label="Close">&times;</button>
+  <img id="lb-img" src="" alt="">
+  <p class="lb-cap" id="lb-cap"></p>
+</div>
+
+<script>
+/* ============================================================
+   SIGNUP ENDPOINT -- paste the form handler URL here.
+   Works with Formspree, Buttondown, Mailchimp proxy, Netlify, etc.
+   While this is empty the form tells the visitor to email instead.
+   ============================================================ */
+var SIGNUP_ENDPOINT = "";
+var SIGNUP_FALLBACK_EMAIL = "info@notchrunclub.com";
+
+(function () {
+  "use strict";
+
+  /* ---- mobile nav ---- */
+  var burger = document.getElementById("burger");
+  var links  = document.getElementById("navlinks");
+  burger.addEventListener("click", function () {
+    var open = links.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  links.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  /* ---- route map lightbox ---- */
+  var lb = document.getElementById("lb"),
+      lbImg = document.getElementById("lb-img"),
+      lbCap = document.getElementById("lb-cap"),
+      lbX = document.getElementById("lb-x"),
+      lastFocus = null;
+
+  function openLb(href, cap, alt) {
+    lastFocus = document.activeElement;
+    lbImg.src = href; lbImg.alt = alt || ""; lbCap.innerHTML = cap || "";
+    lb.classList.add("open"); document.body.classList.add("locked"); lbX.focus();
+  }
+  function closeLb() {
+    lb.classList.remove("open"); document.body.classList.remove("locked");
+    lbImg.src = ""; if (lastFocus) lastFocus.focus();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".mapfig"), function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var img = a.querySelector("img");
+      openLb(a.getAttribute("href"), a.getAttribute("data-cap"), img ? img.alt : "");
+    });
+  });
+  lbX.addEventListener("click", closeLb);
+  lb.addEventListener("click", function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && lb.classList.contains("open")) closeLb();
+  });
+
+  /* ---- email signup ---- */
+  var form = document.getElementById("signup"),
+      msg  = document.getElementById("su-msg");
+
+  function say(text, kind) {
+    msg.innerHTML = text;
+    msg.className = "su-msg show " + kind;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.company.value) return;                 // honeypot: silently drop bots
+    var email = form.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      say("That email does not look right. Mind checking it?", "bad");
+      form.email.focus();
+      return;
+    }
+    var interests = Array.prototype.map.call(
+      form.querySelectorAll('input[name="interest"]:checked'), function (i) { return i.value; }
+    ).join(", ") || "Not specified";
+
+    if (!SIGNUP_ENDPOINT) {
+      say('The signup list is not connected yet. For now, email us at ' +
+          '<a href="mailto:' + SIGNUP_FALLBACK_EMAIL + '?subject=Join%20the%20list">' +
+          SIGNUP_FALLBACK_EMAIL + '</a> and we will add you.', "bad");
+      return;
+    }
+
+    var btn = form.querySelector("button[type=submit]");
+    btn.disabled = true; btn.textContent = "Sending";
+    fetch(SIGNUP_ENDPOINT, {
+      method: "POST",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name.value.trim(), email: email, interest: interests
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      form.reset();
+      say("You are on the list. See you out there.", "ok");
+    }).catch(function () {
+      say('Something went wrong. Email us at <a href="mailto:' + SIGNUP_FALLBACK_EMAIL + '">' +
+          SIGNUP_FALLBACK_EMAIL + "</a> and we will add you.", "bad");
+    }).then(function () {
+      btn.disabled = false; btn.textContent = "Sign me up";
+    });
+  });
+})();
+</script>
+</body>
+</html>
