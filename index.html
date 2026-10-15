@@ -268,6 +268,10 @@ section{padding:74px 0}
   padding:16px 32px!important;width:auto!important;cursor:pointer}
 #ctct .ctct-form-button:hover{background:#F3E2E5!important}
 #ctct a{color:#fff!important;text-decoration:underline}
+#ctct .ctct-form-footer,#ctct .ctct-gdpr-text,#ctct .ctct-form-footer *{
+  font-size:.72rem!important;line-height:1.55!important;color:#DDBCC2!important;margin-top:4px!important}
+#ctct .ctct-form-required:before{color:#E8B9C0!important}
+#ctct .ctct-form-field{margin-bottom:16px!important}
 
 /* ---- buttons / footer ---- */
 .btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -690,11 +694,13 @@ body.locked{overflow:hidden}
   });
 
   /* ---- Constant Contact: load the 1 MB widget only when the signup nears view ---- */
+  window._ctct_m = "80827b22df091e71eda9e57bb511f937";   // Notch Run Club account key
   var ctct = document.getElementById("ctct"), ctctLoaded = false;
   function loadCtct() {
     if (ctctLoaded || !ctct) return;
     ctctLoaded = true;
     var sc = document.createElement("script");
+    sc.id = "signupScript";
     sc.src = "https://static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js";
     sc.async = true; sc.defer = true;
     sc.onerror = function () {
