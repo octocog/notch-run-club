@@ -88,23 +88,21 @@ p{max-width:62ch}
 /* ---- hero ---- */
 .hero{position:relative;color:var(--white);overflow:hidden;background-color:var(--maroon-dk);
   background-image:
-    linear-gradient(97deg,
-      rgba(46,11,20,.90) 0%, rgba(46,11,20,.70) 30%,
-      rgba(46,11,20,.22) 58%, rgba(46,11,20,0) 80%, rgba(46,11,20,0) 100%),
-    linear-gradient(180deg, rgba(20,22,21,.22) 0%, rgba(20,22,21,0) 44%, rgba(20,22,21,.30) 100%),
+    linear-gradient(rgba(38,10,17,.52), rgba(38,10,17,.52)),
     url("img/hero.webp");
   background-repeat:no-repeat;
-  background-size:cover,cover,cover;
-  background-position:center,center,center 62%}
+  background-size:cover,cover;
+  background-position:center,center 62%}
 .hero .in{position:relative;z-index:1}
-.hero h1{text-shadow:0 3px 26px rgba(20,22,21,.5)}
-.hero .sub{text-shadow:0 2px 14px rgba(20,22,21,.55)}
+.hero h1{text-shadow:0 2px 10px rgba(16,5,9,.72),0 6px 38px rgba(16,5,9,.55)}
+.hero .sub{text-shadow:0 1px 3px rgba(16,5,9,.9),0 2px 16px rgba(16,5,9,.7)}
 .hero .in{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
   display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
 .hero-txt{padding:72px 0}
 .hero h1{font-family:var(--f-dis);font-weight:400;font-size:clamp(54px,8.4vw,112px);line-height:.84;
   text-transform:uppercase;margin:12px 0 0;letter-spacing:-.008em}
 .hero .sub{font-size:1.22rem;line-height:1.5;max-width:38ch;margin:24px 0 0;color:#F3E2E5}
+.hero .eyebrow{color:#F6DDE1;text-shadow:0 1px 4px rgba(16,5,9,.95),0 2px 14px rgba(16,5,9,.8)}
 .since{display:inline-block;margin-top:26px;border:1px solid rgba(255,255,255,.4);
   font-family:var(--f-num);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px}
 .hero-img{display:flex;align-items:center;justify-content:center;padding:40px 0;position:relative}
@@ -247,6 +245,23 @@ section{padding:74px 0}
 .showup .rt-h{margin:0 0 10px}
 .showup p{font-size:.95rem}
 
+/* ---- message form ---- */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start;
+  margin-top:58px;border-top:1px solid rgba(255,255,255,.3);padding-top:40px;
+  position:relative;z-index:1}
+.ct-txt .rt-h{margin:8px 0 12px}
+.ct-form{background:rgba(0,0,0,.17);padding:30px 32px 32px}
+.ct-form label{display:block;font-family:var(--f-num);font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:#E8B9C0;margin-bottom:16px}
+.ct-form input[type=text],.ct-form input[type=email],.ct-form textarea{
+  display:block;width:100%;margin-top:8px;background:var(--white);border:0;padding:14px 15px;
+  font-family:var(--f-body);font-size:1rem;color:var(--black);resize:vertical}
+.ct-form .btn{margin-top:6px;border:0;cursor:pointer;font-weight:400;font-family:var(--f-num)}
+.ct-form .btn[disabled]{opacity:.55;cursor:progress}
+.ct-msg{margin:16px 0 0;font-size:.9rem;max-width:none;display:none}
+.ct-msg.show{display:block}
+.ct-msg.ok{color:#CFF5D8} .ct-msg.bad{color:#FFD4DA}
+
 /* ---- Constant Contact widget, restyled ---- */
 #ctct{min-height:220px}
 #ctct .ctct-form-defaults,#ctct .ctct-form-custom{background:transparent!important;padding:0!important}
@@ -314,19 +329,17 @@ body.locked{overflow:hidden}
   .navlinks a{padding:15px 0;border-bottom:1px solid var(--line);font-size:.86rem}
   .navlinks a:last-child{border-bottom:0}
   .hero{background-image:
-    linear-gradient(180deg,
-      rgba(46,11,20,.86) 0%, rgba(46,11,20,.68) 48%,
-      rgba(46,11,20,.34) 76%, rgba(46,11,20,.22) 100%),
-    linear-gradient(180deg, rgba(20,22,21,.24), rgba(20,22,21,.24)),
+    linear-gradient(rgba(38,10,17,.56), rgba(38,10,17,.56)),
     url("img/hero.webp");
-    background-position:center,center,center 58%}
+    background-size:cover,cover;
+    background-position:center,center 58%}
   .hero .in{grid-template-columns:1fr;gap:0}
   .hero-txt{padding:52px 0 8px}
   .hero-img{padding:12px 0 46px;justify-content:flex-start}
   .hero-img img{max-width:270px}
   .fork-grid{grid-template-columns:1fr;gap:26px;padding:48px 0}
   section{padding:56px 0}
-  .recs,.signup{grid-template-columns:1fr;gap:30px}
+  .recs,.signup,.contact{grid-template-columns:1fr;gap:30px}
   .rec-note{border-left:0;border-top:1px solid rgba(255,255,255,.3);padding:22px 0 0}
   .faq{grid-template-columns:1fr}
   .wm::before{width:420px;height:350px;right:-70px}
@@ -341,7 +354,7 @@ body.locked{overflow:hidden}
   .run{grid-template-columns:62px 1fr;gap:12px 16px}
   .run .time{grid-column:2;font-size:1.2rem}
   .loc-bar{flex-direction:column;gap:4px}
-  .su-form{padding:24px 22px 26px}
+  .su-form,.ct-form{padding:24px 22px 26px}
 }
 @media (max-width:520px){
   :root{--pad:20px}
@@ -619,6 +632,28 @@ body.locked{overflow:hidden}
     </div>
   </div>
 
+  <div class="contact">
+    <div class="ct-txt">
+      <p class="eyebrow on-dark">Questions</p>
+      <h2 class="rt-h">Send us a message</h2>
+      <p>Anything you want to ask before you turn up, about the social runs, the race team,
+        childcare, partnering with the club. It goes straight to Dan.</p>
+    </div>
+    <form class="ct-form" id="contact" novalidate>
+      <label for="ct-name">Your name
+        <input id="ct-name" type="text" name="name" autocomplete="name" placeholder="First and last" required></label>
+      <label for="ct-email">Your email
+        <input id="ct-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <label for="ct-subject">Subject
+        <input id="ct-subject" type="text" name="subject" placeholder="What is this about?" required></label>
+      <label for="ct-message">Your message
+        <textarea id="ct-message" name="message" rows="5" placeholder="Tell us what you need"></textarea></label>
+      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Send message</button>
+      <p class="ct-msg" id="ct-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+
   <div class="showup">
     <h2 class="rt-h">Or just show up</h2>
     <p>There is no registration for the social runs. If you have friends who have thought about
@@ -720,6 +755,62 @@ body.locked{overflow:hidden}
       a.addEventListener("click", loadCtct);
     });
   }
+
+  /* ---- message form -> Dan ----------------------------------------------
+     CONTACT_ENDPOINT: paste a form-to-email endpoint (Web3Forms, Formspree,
+     FormSubmit) to have messages delivered server side. While it is empty the
+     form falls back to opening the visitor's mail client, prefilled.
+     ----------------------------------------------------------------------- */
+  var CONTACT_ENDPOINT = "";
+  var INBOX = ["dan.donato", "gmail.com"].join("@");   // kept out of the markup
+
+  var cform = document.getElementById("contact"),
+      cmsg  = document.getElementById("ct-msg");
+
+  function csay(t, kind) { cmsg.innerHTML = t; cmsg.className = "ct-msg show " + kind; }
+
+  if (cform) cform.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (cform.company.value) return;                       // honeypot
+    var name = cform.name.value.trim(),
+        mail = cform.email.value.trim(),
+        subj = cform.subject.value.trim(),
+        body = cform.message.value.trim();
+
+    if (!name)  { csay("Mind adding your name?", "bad"); cform.name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) {
+      csay("That email does not look right. Mind checking it?", "bad"); cform.email.focus(); return;
+    }
+    if (!subj) { csay("Add a subject so we know what it is about.", "bad"); cform.subject.focus(); return; }
+
+    if (!CONTACT_ENDPOINT) {
+      window.location.href = "mailto:" + INBOX +
+        "?subject=" + encodeURIComponent("[notchrunclub.com] " + subj) +
+        "&body=" + encodeURIComponent(body + "\n\n-- \n" + name + "\n" + mail);
+      csay("Opening your email app. If nothing happens, write to " +
+           '<a href="mailto:' + INBOX + '">' + INBOX + "</a>.", "ok");
+      return;
+    }
+
+    var btn = cform.querySelector("button[type=submit]");
+    btn.disabled = true; btn.textContent = "Sending";
+    fetch(CONTACT_ENDPOINT, {
+      method: "POST",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name, email: mail, subject: "[notchrunclub.com] " + subj,
+        message: body, from_name: "Notch Run Club website"
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      cform.reset();
+      csay("Thanks. That is on its way to Dan.", "ok");
+    }).catch(function () {
+      csay('That did not send. Email <a href="mailto:' + INBOX + '">' + INBOX + "</a> instead.", "bad");
+    }).then(function () {
+      btn.disabled = false; btn.textContent = "Send message";
+    });
+  });
 })();
 </script>
 </body>
