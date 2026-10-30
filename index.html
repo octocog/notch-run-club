@@ -635,7 +635,7 @@ body.locked{overflow:hidden}
       <p class="eyebrow on-dark">Questions</p>
       <h2 class="rt-h">Send us a message</h2>
       <p>Anything you want to ask before you turn up, about the social runs, the race team,
-        childcare, partnering with the club. It goes straight to Dan.</p>
+        childcare, partnering with the club. It comes straight to us.</p>
     </div>
     <form class="ct-form" id="contact" novalidate>
       <label for="ct-name">Your name
@@ -754,8 +754,8 @@ body.locked{overflow:hidden}
     });
   }
 
-  /* ---- message form -> Dan --------------------------------------------
-     Formspree relays the message to Dan's inbox and returns JSON, so the
+  /* ---- message form -> the club ---------------------------------------
+     Formspree relays the message to the club inbox and returns JSON, so the
      visitor stays on the page. Paste the Formspree form id below; it is the
      last part of the endpoint they give you, e.g. "mqkrgvwz".
      Verified from a browser: Formspree answers CORS preflight correctly.
@@ -807,7 +807,7 @@ body.locked{overflow:hidden}
       });
     }).then(function () {
       cform.reset();
-      csay("Thanks. That is on its way to Dan, and he will get back to you.", "ok");
+      csay("Thanks. That is on its way to the club, and we will get back to you.", "ok");
     }).catch(function () {
       csay("That did not send. Please try again in a moment, or reach us on " +
            '<a href="https://www.instagram.com/metersforliters/" target="_blank" rel="noopener">Instagram</a>.', "bad");
