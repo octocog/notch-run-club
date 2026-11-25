@@ -185,6 +185,8 @@ section{padding:74px 0}
 .rec-p{font-size:.97rem;margin:0}
 .rec-note{border-left:1px solid rgba(255,255,255,.3);padding-left:28px}
 .rec-note p{font-size:.92rem;margin:10px 0 0}
+.recs.solo{grid-template-columns:1fr}
+.recs.solo .rec-note{border-left:0;padding-left:0}
 
 /* ---- perks ---- */
 .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;margin-top:40px;position:relative;z-index:1}
@@ -502,14 +504,7 @@ body.locked{overflow:hidden}
       alt="Two Notch teammates laughing together as they finish a race">
   </div>
 
-  <div class="recs">
-    <div class="rec-main">
-      <p class="eyebrow on-dark">Team history</p>
-      <h3 class="rt-h">Records, Hall of Fame, and captains</h3>
-      <p class="rec-p">Every Notch club record, the Notch Run Club Hall of Fame, and the captains
-        who have led each division, all on one page.</p>
-      <a class="btn" href="team-history/">View team history</a>
-    </div>
+  <div class="recs solo">
     <div class="rec-note">
       <p class="eyebrow on-dark">Next season</p>
       <p>The USATF-NE Grand Prix schedule for the coming season has not been released yet. When it
